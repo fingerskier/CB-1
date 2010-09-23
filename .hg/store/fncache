@@ -1,0 +1,25 @@
+data/IDE_config.xml.i
+data/handlers/addItem.cfm.i
+data/handlers/addSection.cfm.i
+data/handlers/addSubSystem.cfm.i
+data/handlers/createSkeleton.cfm.i
+data/handlers/framework.cfc.i
+data/handlers/postInstall.cfm.i
+data/handlers/scriptBase.cfc.i
+data/handlers/scriptTemplate/controllers/main.cfc.i
+data/handlers/scriptTemplate/layouts/default.cfm.i
+data/handlers/scriptTemplate/services/main.cfc.i
+data/handlers/scriptTemplate/views/main/default.cfm.i
+data/handlers/tagBase.cfc.i
+data/handlers/tagTemplate/controllers/main.cfc.i
+data/handlers/tagTemplate/layouts/default.cfm.i
+data/handlers/tagTemplate/services/main.cfc.i
+data/handlers/tagTemplate/views/main/default.cfm.i
+data/FW_1 README.txt.i
+data/Notes.txt.i
+data/handlers/help.cfm.i
+data/handlers/init.cfm.i
+data/handlers/scriptTemplate/layouts/main/default.cfm.i
+data/handlers/tagTemplate/layouts/main/default.cfm.i
+data/handlers/scriptTemplate/Application.cfc.i
+data/handlers/tagTemplate/Application.cfc.i

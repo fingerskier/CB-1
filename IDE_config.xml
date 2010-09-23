@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<application>
+	<name>CB/1</name>
+	<author>Matt Currier</author>
+	<version>0.3</version>
+	<email>fingerskier@gmai.com</email>
+	<description>CB/1 is a ColdFusion Builder extension to automate creation of components when using FW/1 (Framework One).  Things like adding sub-systems, sections, and items are handled automatically.</description>
+	<license>   Copyright 2010 Matt Currier
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.</license>
+
+	<events>  
+		<event type="onprojectcreate" handlerid="createStructure" />  
+	</events> 
+
+	<handlers>
+		<handler id="postinstallhandler" type="CFM" filename="postInstall.cfm"></handler>
+		<handler id="addItem" type="CFM" filename="addItem.cfm"></handler>
+		<handler id="renameItem" type="CFM" filename="renameItem.cfm"></handler>
+		<handler id="addSection" type="CFM" filename="addSection.cfm"></handler>
+		<handler id="addSubSystem" type="CFM" filename="addSubSystem.cfm"></handler>
+		<handler id="createSkeleton" type="CFM" filename="createSkeleton.cfm"></handler>
+		<handler id="helpme" type="CFM" filename="help.cfm" />
+	</handlers>
+
+	<menucontributions >
+		<contribution target="projectview">
+			<menu name="FW/1">
+				<action name="Add an Item" handlerid="addItem" showResponse="true">
+					<input name="name" label="New Item: " type="string" required="true" pattern="[\d\w_-]+" errormessage="Items names may only contain letters, numbers, hypens, or underscores." helpmessage="Select whether to add this item to the controller, service, layout, and/or view." default="default" />
+					<input name="scriptBased" label="Generate CFscript" type="boolean" checked="true" />
+					<input />
+					<input name="controller" label="Controller" type="boolean" checked="true" />
+					<input name="service" label="Service" type="boolean" checked="true" />
+					<input name="layout" label="Layout" type="boolean" checked="true" />
+					<input name="view" label="View" type="boolean" checked="true" />
+				</action>
+				<action name="Rename This Item" handlerid="renameItem" showReponse="true">
+					<filters>
+						<filter type="file" pattern="^.+\.(cfm)" />
+					</filters>
+
+					<input name="name" label="Rename To: " type="string" required="true" pattern="[\d\w_-]+" errormessage="Items names may only contain letters, numbers, hypens, or underscores." helpmessage="Enter the new name for this item." default="default" />
+				</action>
+				<action name="Add a Section" handlerid="addSection" showResponse="true">
+					<input name="name" label="New Section: " type="string" required="true" pattern="[\d\w_-]+" errormessage="Section names may only contain letters, numbers, hypens, or underscores." helpmessage="Select whether to add this section to the controller, service, layout, and/or view." default="main" />
+					<input name="scriptBased" label="Generate CFscript" type="boolean" checked="true" />
+					<input />
+					<input name="controller" label="Controller" type="boolean" checked="true" />
+					<input name="service" label="Service" type="boolean" checked="true" />
+					<input name="layout" label="Layout" type="boolean" checked="true" />
+					<input name="view" label="View" type="boolean" checked="true" />
+				</action>
+				<action name="Add a Sub-System" handlerid="addSubSystem" showResponse="true">
+					<input name="name" label="New Sub-System: " type="string" required="true" pattern="[\d\w_-]+" errormessage="Sub-Systems names may only contain letters, numbers, hypens, or underscores." helpmessage="Select whether to add this sub-system to the controller, service, layout, and/or view." default="home" />
+					<input name="scriptBased" label="Generate CFscript" type="boolean" checked="true" />
+					<input />
+					<input name="controllers" label="Controllers" type="boolean" checked="true" />
+					<input name="services" label="Services" type="boolean" checked="true" />
+					<input name="layouts" label="Layouts" type="boolean" checked="true" />
+					<input name="views" label="Views" type="boolean" checked="true" />
+				</action>
+				<action name="Create Project Skeleton" handlerid="createSkeleton" showResponse="true">
+					<input name="scriptBased" label="Generate CFscript" type="boolean" checked="true" />
+					<input name="basicApp" label="Basic App" type="boolean" check="false" helpmessage="check this box to put directories in the root; uncheck for sub-system application" />
+				</action>
+				<action name="-" />
+				<action name="CB/1 Help" handlerid="helpme" showResponse="true" />
+			</menu>
+		</contribution>
+	</menucontributions>
+</application>

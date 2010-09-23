@@ -1,0 +1,16 @@
+CB/1 - a ColdFusion Builder extension for the FW/1 ColdFusion framework
+
+Author: Matt Currier (fingerskier@gmail.com)
+
+Please feel free to contact me with bugs, suggestions, or other related inquiries regarding this extension.
+
+Future Plans:
+	Create a FW/1 project (if possible...)
+	Add support for different action default names (and other FW/1 config options)
+	Ability to rename sections & items
+	Download framework instead of including it with the extension
+	add an optional dot-path for the framework.cfc location (create-skeleton)
+	
+Rainy-Day Plans:
+	project tree with ability to add, delete, and RENAME sub-systems, section, items
+	testing interface to pull action URLs and introspect rc/view
